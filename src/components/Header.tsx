@@ -18,7 +18,7 @@ export const Header = ({ selected }:IHeaderProps) => {
     }, [openNav]);
 
     return (
-        <header className="flex items-center p-4 shadow-lg w-full h-[10vh] md:flex-col md:w-fit md:h-screen fixed bottom-0">
+        <header className="bg-white flex items-center p-4 shadow-lg w-full h-[10vh] md:flex-col md:w-fit md:h-screen fixed bottom-0 z-50">
             <div className="flex justify-between items-center h-[10%] w-full">
                 <Link to="/Home"><img src="/public/assets/logo-square.png" alt="Home" className="w-[45px]" /></Link>
                 <img

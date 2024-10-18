@@ -17,6 +17,8 @@ export default {
                 mainNeutral: "#E9D5CA",
                 darkNeutral: "#D9D9D9",
                 trueNeutral: "#AAAAAA",
+                denialRed: "#BB6161",
+                approvalGreen: "#61BB74",
     
             },
         },
