@@ -8,7 +8,6 @@ export const Home = () => {
     const [doorID, setDoorID] = useState<number>();
 
     useEffect( () => {
-
         const data = api.get(`/door/${doorID}`).then( (res) => {
         }).catch( (err) => {});
 
@@ -20,7 +19,7 @@ export const Home = () => {
             <main className="min-h-screen md:ml-20 py-10 mb-[10vh]  md:mb-0 px-[10%] bg-lightNeutral flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                     <h1 className="font-semibold text-3xl text-fontColor"> Pass Control</h1>
-                    <img  className="w-[40px]" src="../../assets/icon/paw-title.png"></img>
+                    <img  className="w-[40px]" src="/assets/icon/paw-title.png"></img>
                 </div>
                 <div className="flex justify-between bg-white rounded-md shadow-md p-2 md:hidden">
                     <select className="w-10/12 text-fontColor" name="" id="">
@@ -69,7 +68,7 @@ export const Home = () => {
                                 <img  className="w-[30px]" src="/assets/icon/paw-icon.png" alt="" />
                                 <div className="">
                                     <span className="font-medium text-lg text-fontColor">Amora</span>
-                                    <input type="checkbox" value="" className="sr-only peer"></input>
+                                    <input type="checkbox" className="sr-only peer"></input>
                                 </div>
                                 <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-denialRed peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark peer-checked:bg-approvalGreen shadow-inner"></div>
                             </label>
@@ -77,7 +76,7 @@ export const Home = () => {
                                 <img  className="w-[30px]" src="/assets/icon/paw-icon.png" alt="" />
                                 <div className="">
                                     <span className="font-medium text-lg text-fontColor">Pifo</span>
-                                    <input type="checkbox" value="" className="sr-only peer"></input>
+                                    <input type="checkbox" className="sr-only peer"></input>
                                 </div>
                                 <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-denialRed peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark peer-checked:bg-approvalGreen shadow-inner"></div>
                             </label>
@@ -85,7 +84,7 @@ export const Home = () => {
                                 <img  className="w-[30px]" src="/assets/icon/paw-icon.png" alt="" />
                                 <div className="">
                                     <span className="font-medium text-lg text-fontColor">Panguão</span>
-                                    <input type="checkbox" value="" className="sr-only peer"></input>
+                                    <input type="checkbox" className="sr-only peer"></input>
                                 </div>
                                 <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-denialRed peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark peer-checked:bg-approvalGreen shadow-inner"></div>
                             </label>

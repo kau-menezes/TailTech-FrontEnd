@@ -4,6 +4,8 @@ import { Input } from "./components/Input"
 
 import girl from "/assets/img/girl.svg"
 import { SubmitHandler, useForm } from "react-hook-form"
+import { useContext } from "react"
+import { UserContext } from "../../providers/UserProvider"
 
 interface ILogin {
     email:string; 
@@ -13,9 +15,10 @@ interface ILogin {
 export const Login = () => {
     
     const { register, handleSubmit } = useForm<ILogin>()
+    const { handleLogin } = useContext(UserContext)
 
-    const submit:SubmitHandler<ILogin> = (data) => {
-        console.log(data)
+    const submit:SubmitHandler<ILogin> = async ({ email, password }) => {
+        await handleLogin(email, password);
     }
 
     return (
