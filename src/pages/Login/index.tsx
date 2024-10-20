@@ -1,11 +1,11 @@
 import logo from "/assets/main-logo.svg"
-import { Button } from "../../components/Button"
-import { Input } from "../../components/Input"
 
 import girl from "/assets/img/girl.svg"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { useContext } from "react"
 import { UserContext } from "../../providers/UserProvider"
+import Input from "../../components/Input"
+import Button from "../../components/Button"
 
 interface ILogin {
     email:string; 

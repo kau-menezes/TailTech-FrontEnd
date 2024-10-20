@@ -5,7 +5,7 @@ interface IHeaderProps {
     selected?: "products" | "pets" | "passcontrol" | "feeder" | "dashboard" | "settings";
 }
 
-export const Header = ({ selected }:IHeaderProps) => {
+export default function Header({ selected }:IHeaderProps) {
 
     const [openNav, setOpenNav] = useState<boolean>(false);
 

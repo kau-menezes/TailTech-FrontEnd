@@ -5,7 +5,7 @@ interface IInputProps extends ComponentPropsWithoutRef<'input'> {
     id: string,
 }
 
-export const Input = forwardRef<HTMLInputElement, IInputProps>(({ label, id, ...props }, ref) => {
+const Input = forwardRef<HTMLInputElement, IInputProps>(({ label, id, ...props }, ref) => {
     return (
         <>
             <div className="flex flex-col items-start min-w-[210px] max-w-[400px] w-full">
@@ -17,3 +17,5 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(({ label, id, ...
         </>
     )
 })
+
+export default Input
