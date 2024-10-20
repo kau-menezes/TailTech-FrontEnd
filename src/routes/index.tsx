@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import App from "../App";
+import PassControl from "../pages/PassControl";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/pass-control",
-                element: <div></div>
+                element: <PassControl/>
             },
             {
                 path: "/pets",

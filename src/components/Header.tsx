@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 interface IHeaderProps {
@@ -12,10 +12,6 @@ export default function Header({ selected }:IHeaderProps) {
     const navHandler = () => {
         setOpenNav(current => !current);
     };
-
-    useEffect(() => {
-        console.log(openNav);
-    }, [openNav]);
 
     return (
         <header className="bg-white flex items-center p-4 shadow-lg w-full h-[10vh] md:flex-col md:w-fit md:h-screen fixed bottom-0 z-50">
