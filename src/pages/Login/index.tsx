@@ -1,6 +1,6 @@
 import logo from "/assets/main-logo.svg"
-import { DefaultButton } from "../../components/DefaultButton"
-import { Input } from "./components/Input"
+import { Button } from "../../components/Button"
+import { Input } from "../../components/Input"
 
 import girl from "/assets/img/girl.svg"
 import { SubmitHandler, useForm } from "react-hook-form"
@@ -41,7 +41,7 @@ export const Login = () => {
                             <Input {...register("password")} label="Password" type="password" placeholder="Type here..." id="ps-input"/>
                         </div>
                         <div className="w-full flex items-center justify-center my-16">
-                            <DefaultButton text="Login" textColor="text-white" bgColor="bg-mainPurple" type="submit" />
+                            <Button textColor="text-white" bgColor="bg-mainPurple" type="submit" >Login</Button>
                         </div>
                     </form>
                     <div className="w-full hidden lg:flex lg:items-center lg:w-2/3">
