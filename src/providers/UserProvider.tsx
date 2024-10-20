@@ -30,9 +30,9 @@ export const UserProvider = ({ children }:IParentComponentProps) => {
         }
     }, [])
 
-    const handleLogin = async (username:string, email:string) => {
+    const handleLogin = async (email:string, password:string) => {
         try {
-            const res = await api.post("/login", { username, email })
+            const res = await api.post("/login", { email, password })
             localStorage.setItem("@TOKEN", res.data.token)
             setUser(await getUser())
             navigate("/home")
