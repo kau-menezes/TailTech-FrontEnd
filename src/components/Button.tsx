@@ -8,7 +8,7 @@ interface IButtonProps extends ComponentPropsWithoutRef<'button'> {
 
 const Button = forwardRef<HTMLButtonElement, IButtonProps>(({ bgColor, textColor, children, extraTwStyles, ...props}, ref) => {
     return (
-        <button ref={ref} {...props} className={`p-1 w-[100px] ${textColor} ${bgColor} rounded ${extraTwStyles}`}>
+        <button ref={ref} {...props} className={`py-2 px-4 w-fit ${textColor} ${bgColor} rounded ${extraTwStyles}`}>
             {children}
         </button>
     )

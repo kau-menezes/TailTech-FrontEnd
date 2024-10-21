@@ -4,3 +4,7 @@ export interface IUser {
     email: string;
     birthdate: string;
 }
+
+export interface IUserCreation extends Omit<IUser, "userId"> {
+    password: string;
+}

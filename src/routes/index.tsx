@@ -3,6 +3,7 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import App from "../App";
 import PassControl from "../pages/PassControl";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/register",
-                element: <div>register</div>
+                element: <Register/>
             },
             {
                 path: "/home",

@@ -6,6 +6,7 @@ import { useContext } from "react"
 import { UserContext } from "../../providers/UserProvider"
 import Input from "../../components/Input"
 import Button from "../../components/Button"
+import { Link } from "react-router-dom"
 
 interface ILogin {
     email:string; 
@@ -51,7 +52,7 @@ export const Login = () => {
                 <div className="mb-16">
                     <p className="text-2xl text-trueNeutral font-semibold">New around here?</p>
                     <div className="flex gap-1">
-                        <span className="font-semibold text-mainPurple">Register</span>
+                        <Link to="/register" className="font-semibold text-mainPurple">Register</Link>
                         <span className="font-medium text-trueNeutral">with us and claim our products.</span>
                     </div>
                 </div>
