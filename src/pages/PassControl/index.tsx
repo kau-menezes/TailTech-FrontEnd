@@ -28,7 +28,7 @@ export default function PassControl() {
 
     return (
         <div className="flex flex-col-reverse bg-lightNeutral w-full">
-            <Header />
+            <Header selected="passcontrol"/>
             <main className="min-h-screen py-10 flex flex-col gap-4 w-[95%] m-auto max-w-[800px] pb-80">
                 <div className="flex items-center gap-3">
                     <h1 className="font-semibold text-3xl text-fontColor"> Pass Control</h1>

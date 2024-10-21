@@ -14,8 +14,8 @@ export default function Header({ selected }:IHeaderProps) {
     };
 
     return (
-        <header className="bg-white flex items-center p-4 shadow-lg w-full h-[10vh] md:flex-col md:w-fit md:h-screen fixed bottom-0 z-50">
-            <div className="flex justify-between items-center h-[10%] w-full">
+        <header className="bg-white flex items-center min-w-16 shadow-lg w-full h-[10vh] md:flex-col md:w-fit md:h-screen fixed bottom-0 z-50">
+            <div className="flex justify-between px-4 md:px-0 md:justify-center items-center h-[10%] w-full">
                 <Link to="/Home"><img src="/public/assets/logo-square.png" alt="Home" className="w-[45px]" /></Link>
                 <img
                     onClick={navHandler}
@@ -24,14 +24,14 @@ export default function Header({ selected }:IHeaderProps) {
                     className="w-[25px] h-auto cursor-pointer md:hidden"
                 />
             </div>
-            <nav className={`h-fit  md:flex md:flex-col md:w-fit md:h-[90%] md:static items-center justify-around w-full transition-all duration-300 fixed left-0 top-[100%] xs:bg-white ${openNav ? "translate-y-[-135%] " : ""}`}>
-                <div className="h-fit flex flex-col gap-8 md:items-center md:pr-0 items-end pr-4">
-                    <HeaderIcon selected={selected == "products"} path="/Products" iconName="products" alt="Products" />
-                    <HeaderIcon selected={selected == "pets"} path="/Pets" iconName="pets" alt="Your Pets" />
-                    <HeaderIcon selected={selected == "passcontrol"} path="/PassControl" iconName="passcontrol" alt="PassControl" />
-                    <HeaderIcon selected={selected == "feeder"} path="/Feeder" iconName="feeder" alt="Feeder" />
-                    <HeaderIcon selected={selected == "dashboard"} path="/Dashboard" iconName="dashboard" alt="Dashboard" />
-                    <HeaderIcon selected={selected == "settings"} path="/Settings" iconName="settings" alt="Settings" />
+            <nav className={`md:flex md:flex-col md:w-full md:h-[90%] md:static items-center justify-around w-20 h-[90vh] bg-white pt-8 md:pt-0 transition-all md:translate-y-[0] duration-300 fixed right-0 top-0 xs:bg-white ${!openNav ? "translate-y-[110%] " : ""}`}>
+                <div className="h-fit flex flex-col gap-8 md:items-center md:pr-0 items-end w-full">
+                    <HeaderIcon selected={selected == "products"} path="/products" iconName="products" alt="Products" />
+                    <HeaderIcon selected={selected == "pets"} path="/pets" iconName="pets" alt="Your Pets" />
+                    <HeaderIcon selected={selected == "passcontrol"} path="/pass-control" iconName="passcontrol" alt="PassControl" />
+                    <HeaderIcon selected={selected == "feeder"} path="/feeder" iconName="feeder" alt="Feeder" />
+                    <HeaderIcon selected={selected == "dashboard"} path="/dashboard" iconName="dashboard" alt="Dashboard" />
+                    <HeaderIcon selected={selected == "settings"} path="/settings" iconName="settings" alt="Settings" />
                 </div>
             </nav>
         </header>
@@ -46,9 +46,9 @@ interface IHeaderIconProps {
 }
 
 const HeaderIcon = ({ iconName, path, alt, selected }:IHeaderIconProps) => (
-    <Link to={path}>
+    <Link to={path} className={`w-full flex items-center justify-center py-2 rounded-l-lg overflow-hidden ${selected ? "bg-lightNeutral" : ""}`}>
         <img 
-            className={`w-[25px] ${selected ? "bg-lightNeutral" : ""}`} 
+            className={`w-full max-w-8 ${selected ? "bg-lightNeutral" : ""}`} 
             src={`/public/assets/icon/${iconName}.png`} 
             alt={alt} 
         />
