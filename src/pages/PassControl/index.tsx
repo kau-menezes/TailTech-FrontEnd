@@ -7,12 +7,13 @@ import useDoorDetails from "./hooks/useDoorDetails";
 import { v4 as uuid } from "uuid";
 import PetPermissionToggle from "./components/PetPermissionToggle";
 import BlockRange from "./components/BlockRange";
+import CreateBlockRangeDialog from "./components/CreateBlockRangeDialog";
 
 export default function PassControl() {
 
     const { doors } = useDoors()
     const [door, setDoor] = useState<IPetDoor>()
-    const { details, setDoorId, deleteBlockRange } = useDoorDetails()
+    const { details, setDoorId, refreshDetails } = useDoorDetails()
 
     const handleSetDoor = (door: IPetDoor) => {
         setDoor(door)
@@ -55,17 +56,17 @@ export default function PassControl() {
                             <h2 className="font-semibold text-2xl text-fontColor">{door?.nickname}</h2>
 
                             <div className="flex flex-col md:flex-row-reverse mt-4 gap-4">
+
                                 <div className="flex flex-col md:w-2/3 rounded-md shadow-md py-8 px-4">
                                     <p className="font-medium text-xl text-fontColor py-2">Block ranges ⏰</p>
                                     <p className="font-medium text-sm text-gray-500 border-b-[2px] py-2">No pet will be able to pass at these times</p>
                                     
                                     <div className="flex flex-col gap-4 mt-4">
-                                        {details.blockRanges.map((br, index) => (
-                                            <BlockRange key={uuid()} blockRange={br} selfRemove={() => deleteBlockRange(index)}/>
+                                        {details.blockRanges.map(br => (
+                                            <BlockRange key={uuid()} blockRange={br} refresh={refreshDetails}/>
                                         ))}
-                                        <button className="bg-darkNeutral text-fontColor w-full rounded-md text-center px-8 py-1 transition-all hover:bg-mainPurple hover:text-white">+</button>
+                                        <CreateBlockRangeDialog refresh={refreshDetails} petDoorId={door.petDoorId}/>
                                     </div>
-
                                 </div>
 
                                 <div className="flex flex-col items-center justify-center gap-4 md:w-1/3 md:justify-start">

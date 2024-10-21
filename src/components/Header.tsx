@@ -26,9 +26,8 @@ export default function Header({ selected }:IHeaderProps) {
             </div>
             <nav className={`md:flex md:flex-col md:w-full md:h-[90%] md:static items-center justify-around w-20 h-[90vh] bg-white pt-8 md:pt-0 transition-all md:translate-y-[0] duration-300 fixed right-0 top-0 xs:bg-white ${!openNav ? "translate-y-[110%] " : ""}`}>
                 <div className="h-fit flex flex-col gap-8 md:items-center md:pr-0 items-end w-full">
-                    <HeaderIcon selected={selected == "products"} path="/products" iconName="products" alt="Products" />
-                    <HeaderIcon selected={selected == "pets"} path="/pets" iconName="pets" alt="Your Pets" />
                     <HeaderIcon selected={selected == "passcontrol"} path="/pass-control" iconName="passcontrol" alt="PassControl" />
+                    <HeaderIcon selected={selected == "pets"} path="/pets" iconName="pets" alt="Your Pets" />
                     <HeaderIcon selected={selected == "feeder"} path="/feeder" iconName="feeder" alt="Feeder" />
                     <HeaderIcon selected={selected == "dashboard"} path="/dashboard" iconName="dashboard" alt="Dashboard" />
                     <HeaderIcon selected={selected == "settings"} path="/settings" iconName="settings" alt="Settings" />

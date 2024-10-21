@@ -1,13 +1,14 @@
 import { ComponentPropsWithoutRef, forwardRef } from "react"
 
 interface IButtonProps extends ComponentPropsWithoutRef<'button'> {
-    textColor: string,
-    bgColor: string 
+    textColor: string;
+    bgColor: string;
+    extraTwStyles?: string;
 }
 
-const Button = forwardRef<HTMLButtonElement, IButtonProps>(({ bgColor, textColor, children, ...props}, ref) => {
+const Button = forwardRef<HTMLButtonElement, IButtonProps>(({ bgColor, textColor, children, extraTwStyles, ...props}, ref) => {
     return (
-        <button ref={ref} {...props} className={`p-1 w-[100px] ${textColor} ${bgColor} hover:scale-105 transition-transform duration-500 rounded`}>
+        <button ref={ref} {...props} className={`p-1 w-[100px] ${textColor} ${bgColor} rounded ${extraTwStyles}`}>
             {children}
         </button>
     )
