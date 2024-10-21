@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../providers/UserProvider";
 
 interface IHeaderProps {
     selected?: "products" | "pets" | "passcontrol" | "feeder" | "dashboard" | "settings";
@@ -7,6 +8,7 @@ interface IHeaderProps {
 
 export default function Header({ selected }:IHeaderProps) {
 
+    const { handleLogout } = useContext(UserContext)
     const [openNav, setOpenNav] = useState<boolean>(false);
 
     const navHandler = () => {
@@ -30,7 +32,9 @@ export default function Header({ selected }:IHeaderProps) {
                     <HeaderIcon selected={selected == "pets"} path="/pets" iconName="pets" alt="Your Pets" />
                     <HeaderIcon selected={selected == "feeder"} path="/feeder" iconName="feeder" alt="Feeder" />
                     <HeaderIcon selected={selected == "dashboard"} path="/dashboard" iconName="dashboard" alt="Dashboard" />
-                    <HeaderIcon selected={selected == "settings"} path="/settings" iconName="settings" alt="Settings" />
+                </div>
+                <div className="mt-[100%]" onClick={handleLogout}>
+                    <HeaderIcon selected={selected == "settings"} path="" iconName="logout" alt="Settings" />
                 </div>
             </nav>
         </header>
