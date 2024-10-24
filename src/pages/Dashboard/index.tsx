@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 
-export default function CreatePet() {
+export default function Dashboard() {
 
     return(
         <div className="flex flex-col-reverse bg-lightNeutral w-full">

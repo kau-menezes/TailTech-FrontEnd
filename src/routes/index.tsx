@@ -4,6 +4,10 @@ import { Login } from "../pages/Login";
 import App from "../App";
 import PassControl from "../pages/PassControl";
 import Register from "../pages/Register";
+import Pets from "../pages/Pets";
+import SmartFeeder from "../pages/SmartFeeder";
+import CreatePet from "../pages/CreatePet";
+import Dashboard from "../pages/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -28,15 +32,19 @@ const router = createBrowserRouter([
             },
             {
                 path: "/pets",
-                element: <div></div>
+                element: <Pets/>
             },
             {
                 path: "/pets/new",
-                element: <div></div>
+                element: <CreatePet/>
             },
             {
-                path: "/doors",
-                element: <div></div>
+                path: "/feeder",
+                element: <SmartFeeder/>
+            },
+            {
+                path: "/dashboard",
+                element: <Dashboard/>
             },
         ]
     },
