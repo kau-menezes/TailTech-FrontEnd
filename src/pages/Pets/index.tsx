@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Header from "../../components/Header";
 import { UserContext } from "../../providers/UserProvider";
 import usePets from "./hooks/usePets";
-import PetCard from "./components/PetCard";
+import PetCard from "../../components/PetCard";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 

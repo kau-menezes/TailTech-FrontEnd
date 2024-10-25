@@ -1,9 +1,9 @@
 import { AxiosError } from "axios";
-import { APIPath } from "../../../constants/APIPath";
-import { IPet } from "../../../types/pets.types"
+import { APIPath } from "../constants/APIPath";
+import { IPet } from "../types/pets.types"
 import { toast } from "react-toastify";
 import { ChangeEventHandler, useState } from "react";
-import { api } from "../../../service/api";
+import { api } from "../service/api";
 
 interface IPetCardProps {
     pet: IPet;
@@ -12,7 +12,7 @@ interface IPetCardProps {
 
 export default function PetCard({ pet, updateData }:IPetCardProps) {
 
-    const [name, setName] = useState(pet.name)
+    const [name, setName] = useState(pet.name || "")
 
     const handleChange:ChangeEventHandler<HTMLInputElement> = async (e) => {
         const file = e.target.files && e.target.files[0];
@@ -52,7 +52,7 @@ export default function PetCard({ pet, updateData }:IPetCardProps) {
     const handleKeyChange = async (key:string) => {
         switch(key) {
             case "Escape": 
-                setName(pet.name);
+                setName(pet.name || "");
                 (document.activeElement as HTMLInputElement).blur();
                 break;
             case "Enter": 
@@ -67,7 +67,7 @@ export default function PetCard({ pet, updateData }:IPetCardProps) {
     return(
         <div className="w-full max-w-96 rounded-md p-8 shadow-lg hover:scale-105 transition-all flex flex-col gap-8">
             <label className="w-full transition-all cursor-pointer relative">
-                <img src={`${APIPath.PHOTOS}/${pet.pictureUrl}`} className="w-full h-64 object-cover"/>
+                <img src={pet.pictureUrl ? `${APIPath.PHOTOS}/${pet.pictureUrl}` : "/assets/img/pet-placeholder.png"} className="w-full h-64 object-cover"/>
                 <input onChange={handleChange} type="file" className="hidden" />
                 
                 <div className="absolute left-0 top-0 w-full h-64 opacity-0 hover:opacity-100 transition-all hover:backdrop-brightness-50 flex justify-center items-center">
@@ -80,6 +80,7 @@ export default function PetCard({ pet, updateData }:IPetCardProps) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 onKeyDown={(e) => handleKeyChange(e.key)}
+                placeholder="Pet Name"
             />
         </div>
     )
