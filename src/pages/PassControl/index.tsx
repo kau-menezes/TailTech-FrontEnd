@@ -39,7 +39,7 @@ export default function PassControl() {
                 {doors.length > 0 && details && door ?
                     <>
                         <div className="flex flex-col md:flex-row md:justify-between gap-8 bg-white rounded-md shadow-md p-2">
-                            <div className="flex items-center text-fontColor">
+                            <div className="flex items-center text-fontColor overflow-x-scroll gap-2 py-1">
                                 {doors.map(d => (
                                     <DoorTab
                                         key={uuid()}

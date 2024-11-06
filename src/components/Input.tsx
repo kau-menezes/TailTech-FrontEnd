@@ -5,10 +5,10 @@ interface IInputProps extends ComponentPropsWithoutRef<'input'> {
     id: string,
 }
 
-const Input = forwardRef<HTMLInputElement, IInputProps>(({ label, id, ...props }, ref) => {
+const Input = forwardRef<HTMLInputElement, IInputProps>(({ label, id, className, ...props }, ref) => {
     return (
         <>
-            <div className="flex flex-col items-start min-w-[210px] max-w-[400px] w-full">
+            <div className={`flex flex-col items-start min-w-[210px] max-w-[400px] w-full ${className}`}>
                 {label &&
                     <label htmlFor={id} className="font-semibold text-sm text-fontColor">{label}</label>
                 }
