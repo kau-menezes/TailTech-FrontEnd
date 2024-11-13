@@ -52,7 +52,7 @@ const HeaderIcon = ({ iconName, path, alt, selected }:IHeaderIconProps) => (
     <Link to={path} className={`w-full flex items-center justify-center py-2 rounded-l-lg overflow-hidden ${selected ? "bg-lightNeutral" : ""}`}>
         <img 
             className={`w-full max-w-8 ${selected ? "bg-lightNeutral" : ""}`} 
-            src={`/public/assets/icon/${iconName}.png`} 
+            src={`/assets/icon/${iconName}.png`} 
             alt={alt} 
         />
     </Link>
