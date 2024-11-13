@@ -18,7 +18,7 @@ export default function Header({ selected }:IHeaderProps) {
     return (
         <header className="bg-white flex items-center min-w-16 shadow-lg w-full h-[10vh] md:flex-col md:w-fit md:h-screen fixed bottom-0 z-[999]">
             <div className="flex justify-between px-4 md:px-0 md:justify-center items-center h-[10%] w-full">
-                <Link to="/Home"><img src="/public/assets/logo-square.png" alt="Home" className="w-[45px]" /></Link>
+                <Link to="/Home"><img src="/assets/logo-square.png" alt="Home" className="w-[45px]" /></Link>
                 <img
                     onClick={navHandler}
                     src="/public/assets/icon/menu.png"
